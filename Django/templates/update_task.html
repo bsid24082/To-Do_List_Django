@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head section with necessary imports) ... -->
+    <title>Update Task - My_TODOlist</title>
+</head>
+<body>
+    <div class="container py-3 my-3">
+        <h2 class="text-center"><u>Update Task</u></h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Task Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ task.taskTitle }}" required>
+            </div>
+            <div class="form-group">
+                <label for="desc">Task Description</label>
+                <textarea class="form-control" id="desc" name="desc" rows="3" required>{{ task.taskDesc }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Task</button>
+        </form>
+    </div>
+</body>
+</html>
